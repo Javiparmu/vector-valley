@@ -1,11 +1,12 @@
 import MaxWidthWrapper from "@/components/ui/max-width-wrapper";
 import ElipseIcons from "@/components/elipse-icons";
 import SvgTitle from "@/components/svg-title";
-import BlurredBg from "@/components/blurred-bg";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight, Scroll } from "lucide-react";
 import SearchBar from "@/components/search-bar";
 import IconList from "@/components/icon-list";
+import ScrollDownButton from "@/components/scroll-down-button";
+import IconRepository from "@/components/icon-repository";
 
 export default function Home() {
   return (
@@ -18,9 +19,7 @@ export default function Home() {
           svg resource on the
           <span className="ml-5 bg-gradient-to-tr from-red-500 dark:from-indigo-500 to-indigo-500 dark:to-red-500 inline-block text-transparent bg-clip-text">web.</span>
         </h1>
-        <ElipseIcons />
-        <BlurredBg />
-        <div className="flex gap-4 mt-40">
+        <div className="flex gap-4 mt-16">
           <Link href='/svgate' className='flex w-48 text-white bg-red-500 py-4 px-6 rounded-lg items-center justify-between hover:bg-red-600 transition'>
             Explore our AI
             <ChevronRight />
@@ -30,8 +29,9 @@ export default function Home() {
             <ChevronRight />
           </Link>
         </div>
-        <SearchBar />
-        <IconList />
+        <ElipseIcons />
+        <ScrollDownButton />
+        <IconRepository />
       </MaxWidthWrapper>
     </main>
   );

@@ -79,7 +79,7 @@
   cursor: pointer;
   offset-path: path("M 0,0 a 600,60 0 1,0 0.1,0");
   offset-rotate: 0deg;
-  animation: round-motion 16s linear infinite, changeOpacityAndScale 16s linear infinite, transform 0.2s ease-in-out;
+  animation: round-motion 20s linear infinite, changeOpacityAndScale 20s linear infinite, transform 0.2s ease-in-out;
 }
 
 .round-motion:hover {

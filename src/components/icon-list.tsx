@@ -3,7 +3,7 @@ import React from 'react'
 
 const IconList = () => {
   return (
-    <section className=' flex gap-5 mt-5 pb-20'>
+    <section id="icon-repository" className='flex gap-5 mt-5 pb-20'>
         <aside className='hidden lg:block col-span-1 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 p-5 flex-1'>
             <div className='mb-5'>
                <h5 className='uppercase text-sm font-medium text-gray-500 dark:text-gray-400 mb-4'>

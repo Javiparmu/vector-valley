@@ -3,14 +3,9 @@
 import { ConverterRunner, initializeWasm } from '@/lib/converter';
 import { ArrowRight } from 'lucide-react';
 import { DragEvent, useRef, useState } from 'react';
-import potrace from 'potrace';
 
 function deg2rad(deg: number) {
   return deg/180*3.141592654;
-}
-
-function canvasToDataURL(canvas: HTMLCanvasElement, format: string, quality: any): string {
-  return canvas.toDataURL(format, quality);
 }
 
 const Svgate = () => {
@@ -54,12 +49,6 @@ const Svgate = () => {
         imageCtx?.drawImage(image, 0, 0, imageCanvas.width, imageCanvas.height);
         imageCtx?.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
 
-        const dataURL = canvasToDataURL(imageCanvas, 'image/png', 1.0);
-
-        // potrace.trace(dataURL, (err, svgPath) => {
-        //     if (err) throw err;
-        //     svg.innerHTML = svgPath;
-        // });
 
         const params = JSON.stringify({
           'canvas_id': imageCanvas.id,

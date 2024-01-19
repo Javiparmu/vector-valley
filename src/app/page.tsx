@@ -4,13 +4,11 @@ import SvgTitle from "@/components/svg-title";
 import BlurredBg from "@/components/blurred-bg";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import SearchBar from "@/components/search-bar";
-import IconList from "@/components/icon-list";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-10 items-center justify-between mt-5">
-      <MaxWidthWrapper className="flex flex-col items-center h-screen">
+      <MaxWidthWrapper className="flex flex-col items-center h-full">
         <SvgTitle />
         <h1 className="title text-center text-gray-900 dark:text-white text-8xl font-semibold mt-4">
           The
@@ -25,13 +23,11 @@ export default function Home() {
             Explore our AI
             <ChevronRight />
           </Link>
-          <Link href='/' className='flex w-44 text-white bg-indigo-500 py-4 px-6 rounded-lg items-center justify-between hover:bg-indigo-600 transition'>
+          <Link href='/svgate' className='flex w-44 text-white bg-indigo-500 py-4 px-6 rounded-lg items-center justify-between hover:bg-indigo-600 transition'>
             Get Started
             <ChevronRight />
           </Link>
         </div>
-        <SearchBar />
-        <IconList />
       </MaxWidthWrapper>
     </main>
   );

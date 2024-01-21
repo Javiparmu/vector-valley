@@ -49,7 +49,6 @@ const Svgate = () => {
         imageCtx?.drawImage(image, 0, 0, imageCanvas.width, imageCanvas.height);
         imageCtx?.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
 
-
         const params = JSON.stringify({
           'canvas_id': imageCanvas.id,
           'svg_id': svg.id,
@@ -79,10 +78,6 @@ const Svgate = () => {
     
   const downloadSvg = () => {
     const svgElement = svgRef.current as unknown as SVGElement;
-    const imageCanvas = imageCanvasRef.current as unknown as HTMLCanvasElement;
-    const imageCtx = imageCanvas.getContext('2d', {
-      willReadFrequently: true,
-    })
 
     if (svgElement) {
       const svgContent = svgElement.outerHTML;
@@ -100,10 +95,10 @@ const Svgate = () => {
   return (
     <main className='flex flex-col items-center justify-center w-full h-full'>
         <h1 className='text-6xl font-bold mt-5'>Convert your images to svgs.</h1>
-        <p className='text-2xl mt-10 text-gray-700'>Specially designed for creating your own SVG icons and logos</p>
+        <p className='text-2xl mt-10 text-gray-700 dark:text-gray-400'>Specially designed for creating your own SVG icons and logos</p>
         <section className='flex flex-row items-center justify-center w-full h-full mt-20 gap-20'>
           <canvas ref={imageCanvasRef} onDragOver={handleDragOver} onDrop={handleDrop} className='w-[550px] h-[550px] bg-w5ite border-4 border-indigo-500 rounded-xl p-5' id='imageCanvas'></canvas>
-          <ArrowRight size={64} className='text-gray-900'/>
+          <ArrowRight size={64} className='text-gray-900 dark:text-gray-100' />
           <svg ref={svgRef} id="svg" version="1.1" className='w-[550px] h-[550px] border-4 border-indigo-500 rounded-xl p-5 object-contain' xmlns="http://www.w3.org/2000/svg"></svg>
         </section>
         <button style={{ display: canDownload ? 'block' : 'none' }} className='bg-red-500 py-4 px-6 text-white rounded-lg' onClick={downloadSvg}>Descargar SVG</button>
